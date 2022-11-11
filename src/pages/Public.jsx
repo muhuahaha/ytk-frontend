@@ -1,13 +1,14 @@
 import React from 'react';
 import useTitle from '../hooks/useTitle';
+import styles from './Public.module.scss';
 
 function Public() {
   const secret = (num) => {
-    const digits = num.toString().split('');
-    const digitOne = +digits[0];
-    const digitTwo = +digits[1];
+    const d = [...`${num}`];
+    const d1 = +d[0];
+    const d2 = +d[1];
 
-    return digitOne ** digitTwo - digitOne * digitTwo;
+    return d1 ** d2 - d1 * d2;
   };
 
   const result = secret(23);
@@ -17,10 +18,10 @@ function Public() {
 
   useTitle('Yoo Test');
   return (
-    <div>
-      <h1>23 {result} = 2</h1>
+    <div className={styles.container}>
+      <h1 className={styles.test}>23 {result} = 2</h1>
 
-      <h2>25 {result2} = 22</h2>
+      <h2 className="test">25 {result2} = 22</h2>
       <h2>15 {result3} = -4</h2>
     </div>
   );

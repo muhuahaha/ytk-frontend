@@ -1,7 +1,8 @@
 import React from 'react';
+import styles from './Hamburger.module.scss';
 
 const Hamburger = () => {
-  const content = <div>Hamburger</div>;
+  const content = <div className={styles.test}>Hamburger</div>;
 
   return content;
 };
