@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Outlet, Link, useNavigate, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -11,7 +11,9 @@ const NaviLink = ({ children, to }) => {
   const dispatch = useDispatch();
   const show = useSelector((state) => state.navi.showMenu);
 
-  console.log(show, 'show');
+  useEffect(() => {
+    console.log(show, 'show');
+  }, [show]);
 
   const pathMatchRoute = (route) => {
     if (route === location.pathname) {
@@ -40,7 +42,6 @@ const NaviLink = ({ children, to }) => {
 NaviLink.propTypes = {
   children: PropTypes.node,
   to: PropTypes.string,
-  show: PropTypes.bool,
 };
 
 export default NaviLink;

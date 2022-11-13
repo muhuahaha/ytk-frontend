@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import Layout from './components/Layout';
 import Header from './components/layouts/Header';
 import SidebarNav from './components/layouts/SidebarNav';
@@ -11,13 +12,14 @@ import Navigation from './components/layouts/Navigation';
 import NotFoundPage from './pages/NotFound';
 
 function App() {
-  const [menuState, setMenuState] = useState(false);
+  const showMenu = useSelector((state) => state.navi.showMenu);
+  const [menuState, setMenuState] = useState(showMenu);
 
   return (
     <div className="App">
       <Navigation />
-      <Header menuState={menuState} setMenuState={setMenuState} />
-      <SidebarNav menuState={menuState} setMenuState={setMenuState} />
+      <Header menuState={showMenu} setMenuState={setMenuState} />
+      <SidebarNav menuState={showMenu} setMenuState={setMenuState} />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Public />} />

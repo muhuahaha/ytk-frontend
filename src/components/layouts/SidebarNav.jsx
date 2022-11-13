@@ -5,13 +5,17 @@
 import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
+import { useDispatch } from 'react-redux';
 import styles from './SitebarNav.module.scss';
+import NavLink from './NaviLink';
+import { toggleShow } from '../../features/navi/naviSlice';
 
 const SidebarNav = (props) => {
   let sidebarMenu = useRef(null);
   let sidebarMenuOverlay = useRef(null);
   let menuLayer = useRef(null);
   const menuTimeline = useRef();
+  const dispatch = useDispatch();
 
   const { menuState, setMenuState } = props;
 
@@ -48,7 +52,7 @@ const SidebarNav = (props) => {
       <div
         className={styles.sidebarNavigationOverlay}
         ref={(el) => (sidebarMenuOverlay = el)}
-        onClick={() => setMenuState(false)}
+        onClick={() => dispatch(toggleShow())}
       />
       <div className={styles.menu_wrapper}>
         <div className={styles.menu_layer} ref={(el) => (menuLayer = el)} />
@@ -58,21 +62,9 @@ const SidebarNav = (props) => {
         >
           <div className={styles.sidebar_top}>
             <div className={styles.links_wrapper}>
-              <Link className={styles.menu_link} to="/">
-                Home
-              </Link>
-              <Link className={styles.menu_link} to="/about">
-                About
-              </Link>
-              <Link className={styles.menu_link} to="/services">
-                Services
-              </Link>
-              <Link className={styles.menu_link} to="/gallery">
-                Gallery
-              </Link>
-              <Link className={styles.menu_link} to="/contact">
-                Contact
-              </Link>
+              <NavLink to="/">Link 1</NavLink>
+              <NavLink to="/">Link 1</NavLink>
+              <NavLink to="/">Link 1</NavLink>
             </div>
           </div>
           <div className="sidebar-bottom">
