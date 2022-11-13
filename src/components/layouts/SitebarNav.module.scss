@@ -1,5 +1,5 @@
 // header
-.site_header {
+.site-header {
   display: flex;
   justify-content: space-between;
   position: fixed;
@@ -8,7 +8,7 @@
   right: 0;
   margin: auto;
   z-index: 10;
-  .brand_icon a {
+  .brand-icon a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +17,7 @@
     letter-spacing: 2px;
     color: #212121;
   }
-  .brand_icon .icon {
+  .brand-icon .icon {
     display: inline-flex;
     font-size: 2rem;
     height: 48px;
@@ -25,7 +25,7 @@
     justify-content: center;
     align-items: center;
   }
-  .menu_trigger {
+  .menu-trigger {
     display: inline-flex;
     flex-direction: column;
     height: 48px;
@@ -47,7 +47,7 @@
       transition: all ease 0.5s;
     }
   }
-  .menu_close {
+  .menu-close {
     span {
       position: absolute;
       background-color: #efefef;
@@ -80,7 +80,7 @@
   z-index: 8;
 }
 
-.menu_wrapper {
+.menu-wrapper {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -92,7 +92,7 @@
   overflow: hidden;
 }
 
-.menu_layer {
+.menu-layer {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -121,19 +121,19 @@
     width: 0px;
   }
 
-  .sidebar_top {
+  .sidebar-top {
     overflow: hidden;
     display: flex;
     height: calc(100% - 260px);
   }
-  .links_wrapper {
+  .links-wrapper {
     overflow: hidden;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
     flex-shrink: 0;
-    .menu_link {
+    .menu-link {
       padding: 16px;
       display: flex;
       color: #f7f7f7;
@@ -148,13 +148,13 @@
     }
   }
 }
-.extra_links {
+.extra-links {
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
   list-style-type: none;
-  .link_item {
+  .link-item {
     display: inline-flex;
     flex-direction: column;
     margin: 8px 16px;
@@ -165,7 +165,7 @@
         color: #efefef;
       }
     }
-    .link_title {
+    .link-title {
       font-weight: 700;
       color: #efefef;
       text-transform: uppercase;
@@ -175,7 +175,7 @@
       color: #efefef;
     }
 
-    .social_media_links {
+    .social-media-links {
       display: flex;
       justify-content: flex-start;
       a {

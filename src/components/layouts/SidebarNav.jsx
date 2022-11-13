@@ -50,18 +50,15 @@ const SidebarNav = (props) => {
   return (
     <>
       <div
-        className={styles.sidebarNavigationOverlay}
+        className="sidebarNavigationOverlay"
         ref={(el) => (sidebarMenuOverlay = el)}
         onClick={() => dispatch(toggleShow())}
       />
-      <div className={styles.menu_wrapper}>
-        <div className={styles.menu_layer} ref={(el) => (menuLayer = el)} />
-        <nav
-          className={styles.sidebarNavigation}
-          ref={(el) => (sidebarMenu = el)}
-        >
-          <div className={styles.sidebar_top}>
-            <div className={styles.links_wrapper}>
+      <div className="menu-wrapper">
+        <div className="menu-layer" ref={(el) => (menuLayer = el)} />
+        <nav className="sidebarNavigation" ref={(el) => (sidebarMenu = el)}>
+          <div className="sidebar-top">
+            <div className="links-wrapper">
               <NavLink to="/">Link 1</NavLink>
               <NavLink to="/">Link 1</NavLink>
               <NavLink to="/">Link 1</NavLink>
